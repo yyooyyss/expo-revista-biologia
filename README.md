@@ -9,34 +9,47 @@ Publicado en:
 https://yyooyyss.github.io/expo-revista-biologia/
 ```
 
-## Estado
+## Reportaje
 
-**Portada publicada, contenido del reportaje en elaboración.** La página actual presenta la
-identidad de la sección, los ejes temáticos previstos y la estructura que tendrá el reportaje
-final, siguiendo el mismo diseño interactivo de las demás secciones de la revista.
+**«Evolución, diversidad y amenazas antrópicas: un análisis de las especies nativas y
+endémicas desde la escala local hasta la global»**
 
-## Ejes temáticos previstos
+El sitio presenta 9 páginas navegables (botones Anterior/Siguiente, teclado ←/→/Inicio/Fin/Esc,
+swipe táctil, barra de progreso y enlaces compartibles por hash):
 
-1. **Ecosistemas del Ecuador** — páramo andino, Amazonía y Galápagos.
-2. **Biodiversidad** — el país como territorio megadiverso.
-3. **Sostenibilidad y conservación** — amenazas y acciones de protección.
+1. **Portada** — con contador animado y ADN decorativo.
+2. **Introducción** — evolución y diversidad: biodiversidad, endemismo y megadiversidad.
+3. **Animales** — 5 fichas con imagen, datos y bibliografía por especie.
+4. **Plantas** — 5 fichas con imagen, datos y bibliografía por especie.
+5. **Amenazas antrópicas** — deforestación, tráfico ilegal, especies invasoras, cambio climático y contaminación.
+6. **Conservación** — 6 propuestas desde la escala local hasta la global.
+7. **Conclusión** — postura crítica del grupo.
+8. **Actividad** — quiz interactivo de 4 preguntas con puntaje.
+9. **Fuentes** — bibliografía general APA (7.ª ed.) y créditos de imágenes (licencias CC).
 
-## Estructura
+## Especies analizadas
 
-```
-ExpoRevista-Biologia/
-├── index.html      # Portada de la sección y estado del contenido
-├── css/
-│   └── styles.css  # Identidad visual con acento verde (Ciencias Naturales)
-├── js/
-│   └── app.js      # Año del pie y aparición progresiva de los bloques
-└── README.md
-```
+| Tipo | Especie | Nombre científico | Estado |
+|---|---|---|---|
+| Animal | Guacamayo verde mayor | *Ara ambiguus* | En peligro crítico |
+| Animal | Zamarrito pechinegro | *Eriocnemis nigrivestis* | En peligro crítico |
+| Animal | Tapir andino | *Tapirus pinchaque* | En peligro |
+| Animal | Jaguar | *Panthera onca* | Casi amenazado |
+| Animal | Tortuga gigante de Galápagos | *Chelonoidis niger* | Vulnerable |
+| Planta | Pigüe | *Cavanillesia platanifolia* | Vulnerable |
+| Planta | Guayacán | *Handroanthus chrysanthus* | Vulnerable |
+| Planta | Frailejón | *Espeletia pycnophylla* | Vulnerable |
+| Planta | Orquídea Cattleya maxima | *Cattleya maxima* | Vulnerable |
+| Planta | Mangle rojo | *Rhizophora mangle* | Vulnerable |
 
-## Para completar el reportaje
+## Imágenes
 
-Se replicará el formato usado en la sección de Historia: portada, organizador gráfico o cuadro
-comparativo, análisis del contexto ecuatoriano, conclusión con postura crítica y fuentes en
-formato APA (7.ª edición), con navegación por páginas mediante botones, teclado y gestos táctiles.
+Las 10 fotografías provienen de Wikimedia Commons (licencias CC BY / CC BY-SA) y se
+almacenan localmente en `img/`. Los créditos completos están en la página de Fuentes del sitio.
 
-Sección de referencia: https://yyooyyss.github.io/expo-revista-escuelas-economicas/
+## Técnica
+
+- HTML + CSS + JavaScript puro, sin frameworks.
+- Tema visual propio de Biología: verde bosque, patrón de células, hojas flotantes y ADN animado.
+- Navegación por páginas con historial por hash (`#animales`, `#fuentes`, etc.).
+- Publicado con GitHub Pages desde la rama `main`, carpeta raíz.
