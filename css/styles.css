@@ -921,6 +921,7 @@ img { max-width: 100%; display: block; }
   .slide[data-title="Amenazas"],
   .slide[data-title="Conservación"],
   .slide[data-title="Conclusión"],
+  .slide[data-title="Actividad"],
   .slide[data-title="Fuentes"] { break-before: page; page-break-before: always; }
 
   /* Colores de impresión */
@@ -966,4 +967,20 @@ img { max-width: 100%; display: block; }
   .callout { padding: 8px 12px; font-size: 0.8rem; }
 
   .callout, .conclusion__crit { break-inside: avoid; page-break-inside: avoid; }
+
+  /* Actividad interactiva: preguntas legibles, respuestas sin color de pantalla */
+  .quiz { gap: 10px; max-width: 100%; }
+  .quiz__q { break-inside: avoid; page-break-inside: avoid; padding: 6px 0; background: none; border: none; }
+  .quiz__q p { font-size: 0.85rem; margin-bottom: 6px; color: #0a3d1f; }
+  .quiz__opts { gap: 4px; }
+  .quiz__opt {
+    background: #fff !important;
+    border: 1px solid #bbb;
+    color: #222;
+    font-size: 0.78rem;
+    padding: 4px 8px;
+    cursor: default;
+  }
+  .quiz__opt--ok, .quiz__opt--bad { background: #f2f2f2 !important; color: #111; border-color: #999; }
+  .quiz__result { display: none !important; }
 }

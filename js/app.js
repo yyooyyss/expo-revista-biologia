@@ -1,7 +1,7 @@
 /* ==========================================================================
    Expo Revista Digital · Sección Biología
    "Evolución, diversidad y amenazas antrópicas"
-   Lógica: datos de especies, fichas, modal y navegación entre páginas.
+   Lógica: datos de especies, fichas, modal, quiz y navegación entre páginas.
    ========================================================================== */
 
 'use strict';
@@ -226,7 +226,53 @@ const ESPECIES = [
 ];
 
 /* --------------------------------------------------------------------------
-   2. UTILIDADES
+   2. QUIZ
+   -------------------------------------------------------------------------- */
+const QUIZ = [
+  {
+    q: '¿Qué significa que una especie sea endémica?',
+    opts: [
+      'Que vive en muchos países del mundo',
+      'Que solo existe de forma natural en un lugar determinado',
+      'Que fue traída por el ser humano desde otro continente',
+      'Que está en peligro de extinción'
+    ],
+    ok: 1
+  },
+  {
+    q: '¿Cuál de estas especies está en peligro crítico y solo habita en el Ecuador?',
+    opts: [
+      'El jaguar',
+      'La tortuga gigante de Galápagos',
+      'El zamarrito pechinegro',
+      'El mangle rojo'
+    ],
+    ok: 2
+  },
+  {
+    q: '¿Por qué el frailejón es tan importante para las ciudades andinas?',
+    opts: [
+      'Porque produce madera muy dura',
+      'Porque captura la niebla y alimenta los ríos que abastecen de agua',
+      'Porque es la flor nacional del Ecuador',
+      'Porque sirve de alimento al tapir andino'
+    ],
+    ok: 1
+  },
+  {
+    q: '¿Cuál es una amenaza antrópica (causada por el ser humano) para la biodiversidad?',
+    opts: [
+      'La selección natural',
+      'La fotosíntesis',
+      'La deforestación y el tráfico ilegal de especies',
+      'La migración de las aves'
+    ],
+    ok: 2
+  }
+];
+
+/* --------------------------------------------------------------------------
+   3. UTILIDADES
    -------------------------------------------------------------------------- */
 const $  = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
@@ -234,7 +280,7 @@ const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* --------------------------------------------------------------------------
-   3. RENDERIZADO DE FICHAS DE ESPECIES
+   4. RENDERIZADO DE FICHAS DE ESPECIES
    -------------------------------------------------------------------------- */
 function renderSpecies() {
   const contAnimales = $('#speciesAnimales');
@@ -276,7 +322,7 @@ function renderSpecies() {
 }
 
 /* --------------------------------------------------------------------------
-   4. MODAL DE DETALLE
+   5. MODAL DE DETALLE
    -------------------------------------------------------------------------- */
 let lastFocus = null;
 
@@ -314,7 +360,75 @@ function closeModal() {
 }
 
 /* --------------------------------------------------------------------------
-   5. NAVEGACIÓN ENTRE PÁGINAS
+   6. QUIZ: preguntas, respuestas y puntaje
+   -------------------------------------------------------------------------- */
+let score = 0;
+
+function renderQuiz() {
+  const quiz = $('#quiz');
+  if (!quiz) return;
+  quiz.innerHTML = '';
+
+  QUIZ.forEach((item, qi) => {
+    const q = document.createElement('div');
+    q.className = 'quiz__q';
+    q.innerHTML = `<p>${qi + 1}. ${item.q}</p>`;
+
+    const opts = document.createElement('div');
+    opts.className = 'quiz__opts';
+
+    item.opts.forEach((text, oi) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'quiz__opt';
+      b.textContent = text;
+      b.addEventListener('click', () => answer(qi, oi, b));
+      opts.appendChild(b);
+    });
+
+    q.appendChild(opts);
+    quiz.appendChild(q);
+  });
+}
+
+function answer(qi, oi, btn) {
+  const q = QUIZ[qi];
+  const opts = $('.quiz__opt', btn.parentElement);
+  if (opts.some(o => o.disabled)) return;
+
+  opts.forEach((o, i) => {
+    o.disabled = true;
+    if (i === q.ok) o.classList.add('quiz__opt--ok');
+    else if (i === oi) o.classList.add('quiz__opt--bad');
+  });
+
+  if (oi === q.ok) score += 1;
+
+  const answered = $('.quiz__q').filter(el => el.querySelectorAll('.quiz__opt:disabled').length === el.querySelectorAll('.quiz__opt').length).length;
+  if (answered === QUIZ.length) showQuizResult();
+}
+
+function showQuizResult() {
+  const res = $('#quizResult');
+  if (!res) return;
+  $('#quizScore').textContent = `${score} / ${QUIZ.length}`;
+  $('#quizMsg').textContent =
+    score === QUIZ.length ? '¡Excelente! Dominas el tema de la biodiversidad ecuatoriana. 🌿'
+    : score >= 2 ? '¡Muy bien! Repasa las fichas de las especies para mejorar. 🧬'
+    : 'Vuelve a leer el reportaje y las fichas de especies, ¡tú puedes! 📖';
+  res.hidden = false;
+  res.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'nearest' });
+}
+
+function resetQuiz() {
+  score = 0;
+  const res = $('#quizResult');
+  if (res) res.hidden = true;
+  renderQuiz();
+}
+
+/* --------------------------------------------------------------------------
+   7. NAVEGACIÓN ENTRE PÁGINAS
    -------------------------------------------------------------------------- */
 const slides = $$('.slide');
 let current = 0;
@@ -413,7 +527,7 @@ function runCounters() {
 }
 
 /* --------------------------------------------------------------------------
-   6. EVENTOS GLOBALES
+   8. EVENTOS GLOBALES
    -------------------------------------------------------------------------- */
 function bindEvents() {
   const prev = $('#btnPrev');
@@ -469,6 +583,10 @@ function bindEvents() {
     x0 = y0 = null;
   }, { passive: true });
 
+  // Reinicio del quiz
+  const rq = $('#quizReset');
+  if (rq) rq.addEventListener('click', resetQuiz);
+
   // Flechas del teclado visibles solo en escritorio
   if (window.matchMedia('(hover: none)').matches) {
     document.documentElement.classList.add('is-touch');
@@ -490,13 +608,14 @@ function bindPrint() {
 }
 
 /* --------------------------------------------------------------------------
-   7. INICIALIZACIÓN
+   9. INICIALIZACIÓN
    -------------------------------------------------------------------------- */
 function init() {
   const y = $('#year');
   if (y) y.textContent = new Date().getFullYear();
 
   renderSpecies();
+  renderQuiz();
   buildDots();
   bindEvents();
   bindPrint();
