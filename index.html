@@ -1,101 +1,503 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biología | Expo Revista Digital</title>
-<meta name="description" content="Evolución, biodiversidad y conservación del Ecuador.">
-<style>
-:root{--bg:#07140f;--bg2:#0d241a;--green:#55d38a;--green2:#16805a;--lime:#b7e86b;--cream:#f4f0df;--muted:#b7c8be;--line:#27553f;--gold:#e8c66a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--cream);background:radial-gradient(circle at 10% 0%,#123c28 0,transparent 35%),radial-gradient(circle at 90% 80%,#17351d 0,transparent 30%),var(--bg);line-height:1.65}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(90deg,transparent 49%,#8de0a0 50%,transparent 51%),linear-gradient(transparent 49%,#8de0a0 50%,transparent 51%);background-size:70px 70px;transform:perspective(700px) rotateX(55deg) scale(1.5);transform-origin:top}
-header{position:sticky;top:0;z-index:10;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(7,20,15,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.brand{color:var(--cream);text-decoration:none;font-weight:800;letter-spacing:.04em}.brand span{color:var(--green)}.chip{font-size:.75rem;color:var(--green);border:1px solid var(--line);border-radius:30px;padding:6px 12px}
-main{position:relative;max-width:1150px;margin:auto;padding:30px 5% 60px}.hero{min-height:70vh;display:grid;align-content:center;position:relative}.tag{color:var(--green);text-transform:uppercase;letter-spacing:.22em;font-size:.75rem;font-weight:800}.hero h1{font-family:Georgia,serif;font-size:clamp(3.2rem,9vw,7.5rem);line-height:.9;margin:15px 0;background:linear-gradient(110deg,#fff,var(--green),var(--lime),#fff);background-size:220%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 9s linear infinite}@keyframes shine{to{background-position:-220%}}.hero h2{font:italic clamp(1.3rem,3vw,2rem) Georgia;color:var(--green);margin:0 0 18px}.hero p{max-width:700px;color:var(--muted);font-size:1.05rem}.hero-art{position:absolute;right:2%;bottom:10%;font-size:clamp(6rem,18vw,13rem);opacity:.14;filter:drop-shadow(0 0 30px #55d38a)}
-section{margin:70px 0}.section-head{border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:25px}.section-head h2{font:700 clamp(1.8rem,4vw,3rem) Georgia;margin:0}.section-head p{color:var(--muted);margin:5px 0 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}.card{background:linear-gradient(150deg,rgba(255,255,255,.08),rgba(255,255,255,.025));border:1px solid rgba(85,211,138,.2);border-radius:22px;padding:22px;box-shadow:0 20px 50px #0005;transition:.3s}.card:hover{transform:translateY(-7px);border-color:var(--green)}.icon{font-size:2.5rem}.card h3{font-family:Georgia;font-size:1.35rem;margin:10px 0 5px}.latin{color:var(--green);font-style:italic;font-size:.85rem}.card p{color:var(--muted);font-size:.92rem}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:20px;border-left:3px solid var(--green);background:#ffffff08;border-radius:0 15px 15px 0}.step b{display:block;color:var(--lime);margin-bottom:5px}.number{font-size:2rem;font-weight:900;color:#ffffff22}
-.impact{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.impact .card strong{font-size:2rem;color:var(--green);display:block}.actions li{margin:10px 0;color:var(--muted)}.actions li::marker{color:var(--green)}
-.network{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;padding:30px;border:1px solid var(--line);border-radius:25px;background:#ffffff05}.node{padding:13px 18px;border-radius:50px;background:#123c28;border:1px solid var(--green);font-weight:700}.arrow{color:var(--lime);font-size:1.4rem}
-.quiz{background:linear-gradient(135deg,#123c28,#0a1d15);border:1px solid var(--line);border-radius:25px;padding:28px}.quiz button{margin:7px;padding:10px 15px;border-radius:12px;border:1px solid var(--line);background:#07140f;color:var(--cream);cursor:pointer}.quiz button:hover{border-color:var(--green)}#result{font-weight:800;color:var(--lime);min-height:25px}
-footer{text-align:center;border-top:1px solid var(--line);padding:30px;color:var(--muted);font-size:.8rem}
-a{color:var(--green)}@media(max-width:700px){header{padding:10px 4%}.chip{display:none}.steps,.impact{grid-template-columns:1fr}.hero{min-height:75vh}.hero-art{right:0;bottom:5%}}
-</style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Evolución, diversidad y amenazas antrópicas | Biología · Expo Revista Digital</title>
+<meta name="description" content="Reportaje digital de Biología para la Expo Revista Digital «Innovación para un Futuro Sostenible». Análisis de 10 especies nativas y endémicas del Ecuador: evolución, diversidad, amenazas antrópicas y propuestas de conservación. Tercero de Bachillerato General Unificado." />
+<meta name="author" content="Tercero de Bachillerato General Unificado" />
+
+<!-- Open Graph (vista previa al compartir el enlace) -->
+<meta property="og:title" content="Evolución, diversidad y amenazas antrópicas: especies nativas y endémicas del Ecuador" />
+<meta property="og:description" content="Revista digital interactiva de Biología: 5 animales y 5 plantas del Ecuador, con imágenes, datos científicos y bibliografía por especie." />
+<meta property="og:type" content="article" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127807;</text></svg>" />
 </head>
 <body>
-<header><a class="brand" href="https://yyooyyss.github.io/">EXPO REVISTA <span>· BIOLOGÍA</span></a><span class="chip">Ciencias Naturales</span></header>
-<main>
-<section class="hero">
-<div><span class="tag">Innovación para un Futuro Sostenible</span><h1>Biología</h1><h2>Evolución, diversidad y conservación</h2><p>Un recorrido por la biodiversidad del Ecuador para comprender cómo evolucionan los seres vivos, cómo se relacionan con sus ecosistemas y por qué conservarlos es fundamental para un futuro sostenible.</p></div><div class="hero-art">🧬🌿</div>
-</section>
 
-<section id="fundamentos"><div class="section-head"><h2>1 · Fundamentos de la vida y la evolución</h2><p>Conceptos clave para entender la diversidad biológica.</p></div>
-<div class="grid">
-<article class="card"><div class="icon">🧬</div><h3>Evolución</h3><p>Proceso mediante el cual las poblaciones cambian a lo largo de generaciones. La variación heredable y la selección natural contribuyen a la adaptación de las especies.</p></article>
-<article class="card"><div class="icon">🌱</div><h3>Nativas</h3><p>Son especies que forman parte naturalmente de un territorio, sin haber sido introducidas allí por actividades humanas.</p></article>
-<article class="card"><div class="icon">🗺️</div><h3>Endémicas</h3><p>Son especies cuya distribución natural está restringida a una región determinada. Por eso su protección puede ser especialmente importante.</p></article>
+<!-- ====== Fondo decorativo (temática biología) ====== -->
+<div class="bg" aria-hidden="true">
+  <div class="bg__hex"></div>
+  <div class="bg__glow bg__glow--1"></div>
+  <div class="bg__glow bg__glow--2"></div>
+  <div class="bg__leaf bg__leaf--1"></div>
+  <div class="bg__leaf bg__leaf--2"></div>
+  <div class="bg__leaf bg__leaf--3"></div>
+  <div class="bg__cell bg__cell--1"></div>
+  <div class="bg__cell bg__cell--2"></div>
+  <div class="bg__noise"></div>
 </div>
-<div class="steps" style="margin-top:20px">
-<div class="step"><span class="number">01</span><b>Aislamiento geográfico</b>Una población puede quedar separada de otra.</div>
-<div class="step"><span class="number">02</span><b>Selección natural</b>Algunas características favorecen la supervivencia y reproducción.</div>
-<div class="step"><span class="number">03</span><b>Adaptación</b>Las poblaciones acumulan cambios heredables útiles.</div>
-<div class="step"><span class="number">04</span><b>Especiación</b>Con suficiente diferenciación pueden originarse nuevas especies.</div>
-</div></section>
 
-<section id="fauna"><div class="section-head"><h2>2 · 5 animales del Ecuador</h2><p>Ejemplos de fauna vinculada a la biodiversidad y conservación nacional.</p></div>
-<div class="grid">
-<article class="card"><div class="icon">🦜</div><h3>Guacamayo verde mayor</h3><span class="latin">Ara ambiguus</span><p>Ave de gran tamaño asociada a bosques tropicales. La conservación de su hábitat es fundamental para sus poblaciones.</p></article>
-<article class="card"><div class="icon">🐆</div><h3>Jaguar</h3><span class="latin">Panthera onca</span><p>Gran depredador de los ecosistemas tropicales. Su presencia ayuda a mantener relaciones ecológicas dentro de la cadena alimentaria.</p></article>
-<article class="card"><div class="icon">🐻</div><h3>Oso andino</h3><span class="latin">Tremarctos ornatus</span><p>Especie característica de los Andes. Necesita áreas de bosque y páramo conectadas para desplazarse y encontrar alimento.</p></article>
-<article class="card"><div class="icon">🦣</div><h3>Tapir de montaña</h3><span class="latin">Tapirus pinchaque</span><p>Mamífero asociado a ambientes andinos. Su conservación depende de proteger los ecosistemas donde vive.</p></article>
-<article class="card"><div class="icon">🦅</div><h3>Cóndor andino</h3><span class="latin">Vultur gryphus</span><p>Ave emblemática de los Andes y parte importante de los procesos naturales de los ecosistemas donde habita.</p></article>
-</div></section>
+<!-- ====== Barra superior ====== -->
+<header class="topbar">
+  <a class="brand" href="https://yyooyyss.github.io/" aria-label="Volver a la portada de la revista">
+    <span class="brand__mark">B</span>
+    <span class="brand__text">
+      <strong>Expo Revista Digital</strong>
+      <small>Innovación para un Futuro Sostenible</small>
+    </span>
+  </a>
+  <div class="topbar__meta">
+    <span class="chip chip--ghost">Biología · 3.º BGU</span>
+  </div>
 
-<section id="flora"><div class="section-head"><h2>3 · 5 plantas del Ecuador</h2><p>Flora nativa registrada en estudios y fuentes de biodiversidad ecuatoriana.</p></div>
-<div class="grid">
-<article class="card"><div class="icon">🌳</div><h3>Ceibo</h3><span class="latin">Ceiba trichistandra</span><p>Árbol nativo de zonas secas del Ecuador, adaptado a condiciones de disponibilidad limitada de agua.</p></article>
-<article class="card"><div class="icon">🌿</div><h3>Pechiche</h3><span class="latin">Vitex gigantea</span><p>Árbol nativo registrado en estudios de flora ecuatoriana y relacionado con los bosques de la región.</p></article>
-<article class="card"><div class="icon">🌸</div><h3>Beldaco</h3><span class="latin">Pseudobombax millei</span><p>Especie vegetal registrada como endémica en estudios de flora ecuatoriana.</p></article>
-<article class="card"><div class="icon">🌱</div><h3>Amarillo</h3><span class="latin">Centrolobium ochroxylum</span><p>Árbol registrado entre las especies endémicas identificadas en estudios de flora del Ecuador.</p></article>
-<article class="card"><div class="icon">🍃</div><h3>Membrillo</h3><span class="latin">Gustavia angustifolia</span><p>Especie vegetal registrada entre la flora endémica estudiada en Ecuador.</p></article>
-</div></section>
+  <!-- Barra de progreso de lectura -->
+  <div class="progress" role="progressbar" aria-label="Progreso de lectura" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1">
+    <div class="progress__fill" id="progressFill"></div>
+  </div>
+</header>
 
-<section><div class="section-head"><h2>4 · Biodiversidad y ecosistemas</h2><p>La variedad de vida depende de la diversidad de ambientes.</p></div>
-<div class="grid">
-<div class="card"><h3>🏔️ Páramo</h3><p>Los ecosistemas altoandinos presentan condiciones particulares y una flora con especies adaptadas a la altura.</p></div>
-<div class="card"><h3>🌳 Amazonía</h3><p>Sus bosques tropicales albergan numerosas especies y redes ecológicas complejas.</p></div>
-<div class="card"><h3>🌊 Galápagos</h3><p>Su aislamiento geográfico ha contribuido a procesos evolutivos y a una biodiversidad con especies propias de las islas.</p></div>
-</div></section>
+<main id="deck" class="deck">
 
-<section><div class="section-head"><h2>5 · Impactos sobre la biodiversidad</h2><p>Las actividades humanas pueden modificar los ecosistemas a distintas escalas.</p></div>
-<div class="impact">
-<div class="card"><strong>Local</strong><h3>En nuestra comunidad</h3><p>Acumulación de residuos, pérdida de vegetación, contaminación y alteración de espacios naturales.</p></div>
-<div class="card"><strong>Nacional</strong><h3>En Ecuador</h3><p>Deforestación, fragmentación de hábitats, tráfico de fauna y presión sobre ecosistemas y especies.</p></div>
-<div class="card"><strong>Global</strong><h3>En el planeta</h3><p>Cambio climático, pérdida de biodiversidad, contaminación y transformación de ecosistemas.</p></div>
-</div></section>
+  <!-- ============ 1. PORTADA ============ -->
+  <section class="slide slide--active slide--cover" data-title="Portada" aria-label="Portada">
+    <div class="cover">
+      <div class="cover__dna" aria-hidden="true">
+        <svg viewBox="0 0 120 420" xmlns="http://www.w3.org/2000/svg">
+          <g class="dna__strand dna__strand--a">
+            <path d="M60 10 C 20 60, 100 110, 60 160 C 20 210, 100 260, 60 310 C 20 360, 100 400, 60 410" fill="none" stroke="#7ddc5a" stroke-width="3" stroke-linecap="round"/>
+          </g>
+          <g class="dna__strand dna__strand--b">
+            <path d="M60 10 C 100 60, 20 110, 60 160 C 100 210, 20 260, 60 310 C 100 360, 20 400, 60 410" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-linecap="round"/>
+          </g>
+          <g class="dna__rungs">
+            <line x1="60" y1="40" x2="60" y2="40" stroke="#a8e063" stroke-width="2" opacity=".7"/>
+            <line x1="60" y1="80" x2="60" y2="80" stroke="#a8e063" stroke-width="2" opacity=".7"/>
+            <line x1="60" y1="120" x2="60" y2="120" stroke="#a8e063" stroke-width="2" opacity=".7"/>
+            <line x1="60" y1="160" x2="60" y2="160" stroke="#a8e063" stroke-width="2" opacity=".7"/>
+            <line x1="60" y1="200" x2="60" y2="200" stroke="#a8e063" stroke-width="2" opacity=".7"/>
+            <line x1="60" y1="240" x2="60" y2="240" stroke="#a8e063" stroke-width="2" opacity=".7"/>
+            <line x1="60" y1="280" x2="60" y2="280" stroke="#a8e063" stroke-width="2" opacity=".7"/>
+            <line x1="60" y1="320" x2="60" y2="320" stroke="#a8e063" stroke-width="2" opacity=".7"/>
+            <line x1="60" y1="360" x2="60" y2="360" stroke="#a8e063" stroke-width="2" opacity=".7"/>
+          </g>
+        </svg>
+      </div>
 
-<section><div class="section-head"><h2>6 · ¿Qué podemos hacer?</h2><p>La conservación también depende de decisiones cotidianas.</p></div>
-<div class="card actions"><ul>
-<li>Crear y cuidar jardines o espacios con plantas nativas.</li>
-<li>Reducir, reutilizar y separar correctamente los residuos.</li>
-<li>No comprar ni mantener fauna silvestre como mascota.</li>
-<li>Proteger áreas verdes y evitar dañar plantas y animales.</li>
-<li>Participar en proyectos escolares y actividades de ciencia ciudadana.</li>
-<li>Compartir información confiable sobre biodiversidad y conservación.</li>
-</ul></div></section>
+      <p class="eyebrow">Proyecto interdisciplinario · Área de Ciencias Naturales</p>
+      <h1 class="cover__title">
+        Evolución, diversidad<br />
+        y <span>amenazas antrópicas</span>
+      </h1>
+      <p class="cover__sub">
+        Un análisis de las especies nativas y endémicas del Ecuador,
+        desde la escala local hasta la global.
+      </p>
 
-<section><div class="section-head"><h2>7 · Red de la vida</h2><p>Los seres vivos están conectados dentro de los ecosistemas.</p></div>
-<div class="network"><span class="node">🌱 Plantas</span><span class="arrow">→</span><span class="node">🦜 Herbívoros</span><span class="arrow">→</span><span class="node">🐆 Depredadores</span><span class="arrow">→</span><span class="node">♻️ Equilibrio ecológico</span></div></section>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat__num" data-count="10">0</span>
+          <span class="stat__label">especies analizadas</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="5">0</span>
+          <span class="stat__label">animales nativos</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="5">0</span>
+          <span class="stat__label">plantas nativas</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="4500" data-suffix="+">0</span>
+          <span class="stat__label">especies endémicas</span>
+        </div>
+      </div>
 
-<section><div class="section-head"><h2>8 · Actividad de refuerzo</h2><p>Comprueba cuánto recuerdas sobre evolución.</p></div>
-<div class="quiz"><h3>¿Qué proceso puede contribuir directamente a la formación de nuevas especies?</h3><button onclick="answer(false)">Fotosíntesis</button><button onclick="answer(true)">Especiación</button><button onclick="answer(false)">Digestión</button><p id="result"></p></div></section>
+      <button class="btn btn--primary btn--lg" data-go="next" type="button">Comenzar el recorrido →</button>
+    </div>
+  </section>
 
-<section><div class="section-head"><h2>9 · Conclusión</h2></div>
-<div class="card"><p>La biodiversidad del Ecuador representa una riqueza biológica formada por millones de años de procesos evolutivos y por la interacción entre especies y ecosistemas. Conocer animales, plantas y ambientes permite comprender que la conservación no depende únicamente de áreas protegidas, sino también del uso responsable de los recursos y de la participación de la sociedad. Proteger la biodiversidad significa conservar las condiciones que permiten la vida y construir un futuro más sostenible.</p></div></section>
+  <!-- ============ 2. INTRODUCCIÓN · EVOLUCIÓN Y DIVERSIDAD ============ -->
+  <section class="slide" data-title="Introducción" aria-label="Introducción">
+    <header class="slide__head">
+      <p class="eyebrow">01 · Evolución y diversidad</p>
+      <h2 class="slide__title">Un país pequeño con una biodiversidad gigante</h2>
+      <p class="slide__lead">
+        El Ecuador concentra en menos del 0,2 % de la superficie terrestre una de las mayores
+        riquezas biológicas del planeta. Esta diversidad es el resultado de millones de años de
+        evolución en ecosistemas tan distintos como el páramo, la Amazonía, el bosque seco, el
+        manglar y las islas Galápagos.
+      </p>
+    </header>
 
-<section><div class="section-head"><h2>Fuentes consultadas</h2></div>
-<div class="card"><p><a href="https://bioweb.bio/" target="_blank" rel="noopener">BIOWEB Ecuador — PUCE</a><br><a href="https://www.gbif.org/" target="_blank" rel="noopener">GBIF — Global Biodiversity Information Facility</a><br><a href="https://www.ambiente.gob.ec/" target="_blank" rel="noopener">Ministerio del Ambiente, Agua y Transición Ecológica del Ecuador (MAATE)</a></p></div></section>
+    <div class="grid grid--3">
+      <article class="card">
+        <span class="card__icon" aria-hidden="true">🧬</span>
+        <h3>¿Qué es la biodiversidad?</h3>
+        <p>
+          Es la variedad de seres vivos —animales, plantas, hongos y microorganismos— y de los
+          ecosistemas que forman. Incluye tres niveles: la <strong>diversidad genética</strong>
+          (variedad dentro de cada especie), la <strong>diversidad de especies</strong> y la
+          <strong>diversidad de ecosistemas</strong>.
+        </p>
+      </article>
 
-<div style="display:flex;gap:12px;flex-wrap:wrap"><a class="card" style="text-decoration:none" href="https://yyooyyss.github.io/">← Volver a la revista</a></div>
+      <article class="card">
+        <span class="card__icon" aria-hidden="true">🌎</span>
+        <h3>¿Qué es una especie endémica?</h3>
+        <p>
+          Una especie es <strong>endémica</strong> cuando solo existe de forma natural en un lugar
+          determinado. Si ese lugar se destruye, la especie desaparece del planeta para siempre.
+          El Ecuador tiene más de <strong>4 500 especies endémicas</strong>, muchas de ellas en
+          peligro de extinción.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="card__icon" aria-hidden="true">⛰️</span>
+        <h3>Evolución en los Andes y Galápagos</h3>
+        <p>
+          El levantamiento de los Andes y el aislamiento de las islas Galápagos crearon barreras
+          naturales que separaron poblaciones. Con el tiempo, la selección natural las transformó
+          en especies nuevas: es el mismo proceso que Charles Darwin observó en los pinzones de
+          Galápagos en 1835.
+        </p>
+      </article>
+    </div>
+
+    <div class="callout callout--soft">
+      <span class="callout__icon" aria-hidden="true">🌿</span>
+      <p>
+        <strong>Dato clave:</strong> el Ecuador es uno de los <em>17 países megadiversos</em> del
+        mundo. En sus 4 regiones naturales —Costa, Sierra, Amazonía e Insular— viven cerca del
+        8 % de las especies de vertebrados y del 10 % de las plantas vasculares del planeta.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 3. ANIMALES ============ -->
+  <section class="slide" data-title="Animales" aria-label="Animales nativos y endémicos">
+    <header class="slide__head">
+      <p class="eyebrow">02 · Fauna</p>
+      <h2 class="slide__title">Cinco animales nativos y endémicos</h2>
+      <p class="slide__lead">
+        Cada ficha incluye su nombre científico, estado de conservación, hábitat, datos de
+        interés y la bibliografía consultada. Toca o haz clic en «Ver ficha» para ampliar.
+      </p>
+    </header>
+    <div class="species" id="speciesAnimales" aria-live="polite"></div>
+  </section>
+
+  <!-- ============ 4. PLANTAS ============ -->
+  <section class="slide" data-title="Plantas" aria-label="Plantas nativas y endémicas">
+    <header class="slide__head">
+      <p class="eyebrow">03 · Flora</p>
+      <h2 class="slide__title">Cinco plantas nativas y endémicas</h2>
+      <p class="slide__lead">
+        De los bosques petrificados a los manglares: la flora ecuatoriana sostiene la vida animal
+        y regula el agua, el clima y el suelo. Cada ficha incluye su bibliografía.
+      </p>
+    </header>
+    <div class="species" id="speciesPlantas" aria-live="polite"></div>
+  </section>
+
+  <!-- ============ 5. AMENAZAS ANTRÓPICAS ============ -->
+  <section class="slide" data-title="Amenazas" aria-label="Amenazas antrópicas">
+    <header class="slide__head">
+      <p class="eyebrow">04 · Análisis de amenazas</p>
+      <h2 class="slide__title">Amenazas antrópicas: la huella humana</h2>
+      <p class="slide__lead">
+        Las principales amenazas para las especies nativas y endémicas del Ecuador tienen un
+        origen común: las actividades humanas. Estas son las cinco más graves.
+      </p>
+    </header>
+
+    <div class="grid grid--2">
+      <article class="card card--threat">
+        <span class="card__icon" aria-hidden="true">🪓</span>
+        <h3>Deforestación y pérdida de hábitat</h3>
+        <p>
+          Entre 1990 y 2020 el Ecuador perdió más de <strong>2 millones de hectáreas de bosque</strong>
+          por la expansión agrícola, la ganadería, la minería y la tala. El guacamayo verde mayor y
+          el zamarrito pechinegro dependen de bosques que desaparecen año tras año.
+        </p>
+      </article>
+
+      <article class="card card--threat">
+        <span class="card__icon" aria-hidden="true">🦜</span>
+        <h3>Tráfico ilegal de especies</h3>
+        <p>
+          El Ecuador es ruta y origen del tráfico de fauna y flora silvestres. Guacamayos, tortugas
+          y orquídeas son capturados para el comercio de mascotas y coleccionistas. Se estima que el
+          tráfico ilegal de vida silvestre mueve miles de millones de dólares al año a nivel mundial.
+        </p>
+      </article>
+
+      <article class="card card--threat">
+        <span class="card__icon" aria-hidden="true">🐐</span>
+        <h3>Especies introducidas e invasoras</h3>
+        <p>
+          Cabras, ratas, gatos y plantas exóticas alteran los ecosistemas insulares y continentales.
+          En Galápagos, las cabras introducidas destruyeron la vegetación de la que dependen las
+          tortugas gigantes; su erradicación ha sido uno de los mayores proyectos de restauración
+          del mundo.
+        </p>
+      </article>
+
+      <article class="card card--threat">
+        <span class="card__icon" aria-hidden="true">🌡️</span>
+        <h3>Cambio climático</h3>
+        <p>
+          El aumento de temperatura desplaza los ecosistemas de montaña hacia arriba. El frailejón y
+          el tapir andino, adaptados al frío del páramo, no tienen a dónde migrar cuando el páramo
+          se calienta. En Galápagos, el fenómeno de El Niño afecta la reproducción de tortugas y aves.
+        </p>
+      </article>
+
+      <article class="card card--threat">
+        <span class="card__icon" aria-hidden="true">🏭</span>
+        <h3>Contaminación y sobreexplotación</h3>
+        <p>
+          La contaminación por petróleo, agroquímicos y plásticos degrada ríos, manglares y suelos.
+          A esto se suma la sobreexplotación: la tala del pigüe y del guayacán, la recolección ilegal
+          de orquídeas y la cacería del jaguar y del tapir reducen sus poblaciones cada año.
+        </p>
+      </article>
+
+      <article class="card card--threat">
+        <span class="card__icon" aria-hidden="true">📉</span>
+        <h3>El resultado: especies en peligro</h3>
+        <p>
+          Según la Lista Roja de la UICN, el Ecuador tiene cientos de especies amenazadas. De las 10
+          analizadas en este reportaje, <strong>2 están en peligro crítico</strong> (guacamayo verde
+          mayor y zamarrito pechinegro), <strong>4 en peligro</strong> y el resto son vulnerables o
+          casi amenazadas.
+        </p>
+      </article>
+    </div>
+
+    <div class="callout callout--warn">
+      <span class="callout__icon" aria-hidden="true">!</span>
+      <p>
+        <strong>Lectura crítica:</strong> las amenazas no actúan solas. La deforestación abre
+        caminos para la cacería, el cambio climático debilita a las especies y las especies
+        invasoras aprovechan los ecosistemas ya degradados. Por eso la conservación debe atacar
+        varias causas al mismo tiempo.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 6. CONSERVACIÓN ============ -->
+  <section class="slide" data-title="Conservación" aria-label="Propuestas de conservación">
+    <header class="slide__head">
+      <p class="eyebrow">05 · Propuestas de conservación</p>
+      <h2 class="slide__title">¿Cómo proteger lo que nos queda?</h2>
+      <p class="slide__lead">
+        La conservación combina ciencia, ley y participación ciudadana. Estas son cinco propuestas
+        concretas, desde la escala local hasta la global.
+      </p>
+    </header>
+
+    <div class="grid grid--3">
+      <article class="card card--cons">
+        <span class="card__icon" aria-hidden="true">🛡️</span>
+        <h3>1 · Fortalecer las áreas protegidas</h3>
+        <p>
+          El Sistema Nacional de Áreas Protegidas cubre cerca del <strong>20 % del territorio</strong>.
+          Es necesario ampliar las áreas que protegen bosques nublados y páramos, y financiar su
+          control efectivo contra la tala y la cacería.
+        </p>
+      </article>
+
+      <article class="card card--cons">
+        <span class="card__icon" aria-hidden="true">🌱</span>
+        <h3>2 · Restaurar ecosistemas degradados</h3>
+        <p>
+          Reforestar con especies nativas —guayacán, pigüe, mangle rojo— recupera hábitat y captura
+          carbono. La restauración de manglares en la costa ecuatoriana ya ha demostrado beneficios
+          para la pesca y la protección frente a tormentas.
+        </p>
+      </article>
+
+      <article class="card card--cons">
+        <span class="card__icon" aria-hidden="true">📚</span>
+        <h3>3 · Educación y ciencia ciudadana</h3>
+        <p>
+          Conocer es el primer paso para cuidar. Programas escolares, observación de aves y
+          plataformas como iNaturalist permiten que la comunidad registre especies y apoye su
+          monitoreo, como ocurre con el zamarrito pechinegro.
+        </p>
+      </article>
+
+      <article class="card card--cons">
+        <span class="card__icon" aria-hidden="true">⚖️</span>
+        <h3>4 · Leyes y control del tráfico</h3>
+        <p>
+          Aplicar la normativa ambiental —Código Orgánico del Ambiente y la Ley de Galápagos— y
+          sancionar el tráfico de especies reduce la presión sobre guacamayos, orquídeas y tortugas.
+          La cooperación internacional es clave para cerrar las rutas del tráfico.
+        </p>
+      </article>
+
+      <article class="card card--cons">
+        <span class="card__icon" aria-hidden="true">🤝</span>
+        <h3>5 · Conservación con las comunidades</h3>
+        <p>
+          Las comunidades locales, indígenas y campesinas son los mejores guardianes del bosque.
+          Apoyar el turismo comunitario, la agroecología y el pago por servicios ambientales hace que
+          conservar sea más rentable que destruir.
+        </p>
+      </article>
+
+      <article class="card card--cons">
+        <span class="card__icon" aria-hidden="true">🌍</span>
+        <h3>6 · Acción global: el marco internacional</h3>
+        <p>
+          El Convenio sobre la Diversidad Biológica y el Marco Mundial de Biodiversidad de Kunming-
+          Montreal (2022) proponen proteger el <strong>30 % del planeta</strong> para 2030. Ecuador,
+          como país megadiverso, tiene un papel central en esa meta.
+        </p>
+      </article>
+    </div>
+
+    <div class="callout callout--soft">
+      <span class="callout__icon" aria-hidden="true">💡</span>
+      <p>
+        <strong>Nuestra propuesta:</strong> un plan local de conservación para nuestra comunidad
+        podría incluir la siembra de especies nativas en patios y parques, el registro de aves con
+        aplicaciones de ciencia ciudadana y campañas escolares contra el tráfico de vida silvestre.
+        <em>La escala local también cuenta.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 7. CONCLUSIÓN ============ -->
+  <section class="slide" data-title="Conclusión" aria-label="Conclusión">
+    <header class="slide__head">
+      <p class="eyebrow">06 · Cierre</p>
+      <h2 class="slide__title">Conclusión</h2>
+    </header>
+
+    <article class="conclusion">
+      <p>
+        El Ecuador es un laboratorio viviente de la evolución: en sus páramos, bosques, manglares y
+        en las islas Galápagos habitan especies que no existen en ningún otro lugar del mundo. El
+        <strong>guacamayo verde mayor</strong>, el <strong>zamarrito pechinegro</strong>, el
+        <strong>tapir andino</strong>, el <strong>jaguar</strong> y la <strong>tortuga gigante</strong>,
+        junto con el <strong>pigüe</strong>, el <strong>guayacán</strong>, el <strong>frailejón</strong>,
+        la <strong>Cattleya maxima</strong> y el <strong>mangle rojo</strong>, representan esa riqueza
+        y, al mismo tiempo, su fragilidad.
+      </p>
+      <p>
+        Todas estas especies enfrentan amenazas de origen humano: la deforestación, el tráfico ilegal,
+        las especies invasoras, el cambio climático y la contaminación. Sin embargo, la ciencia y la
+        experiencia demuestran que <strong>la conservación funciona</strong> cuando se combinan áreas
+        protegidas, restauración, educación, leyes y el compromiso de las comunidades.
+      </p>
+      <p class="conclusion__crit">
+        <strong>Nuestra postura:</strong> proteger la biodiversidad no es un lujo, es una necesidad.
+        De los ecosistemas dependen el agua que bebemos, el aire que respiramos, los alimentos que
+        consumimos y la estabilidad del clima. Desde la escala local —nuestra comunidad, nuestra
+        escuela— hasta la escala global, cada acción de conservación cuenta. <em>Innovar para un
+        futuro sostenible empieza por conocer y cuidar la vida que nos rodea.</em>
+      </p>
+    </article>
+  </section>
+
+  <!-- ============ 8. ACTIVIDAD INTERACTIVA ============ -->
+  <section class="slide" data-title="Actividad" aria-label="Actividad interactiva">
+    <header class="slide__head">
+      <p class="eyebrow">07 · Refuerzo</p>
+      <h2 class="slide__title">Comprueba lo que aprendiste</h2>
+      <p class="slide__lead">Cuatro preguntas rápidas sobre el contenido del reportaje.</p>
+    </header>
+
+    <div class="quiz" id="quiz" aria-live="polite"></div>
+
+    <div class="quiz__result" id="quizResult" hidden>
+      <p class="quiz__score" id="quizScore">0 / 4</p>
+      <p class="quiz__msg" id="quizMsg"></p>
+      <button class="btn btn--ghost" id="quizReset" type="button">Intentar de nuevo</button>
+    </div>
+  </section>
+
+  <!-- ============ 9. FUENTES ============ -->
+  <section class="slide" data-title="Fuentes" aria-label="Fuentes consultadas">
+    <header class="slide__head">
+      <p class="eyebrow">08 · Bibliografía</p>
+      <h2 class="slide__title">Fuentes consultadas</h2>
+      <p class="slide__lead">Referencias generales en estilo APA (7.ª edición) y créditos de las imágenes.</p>
+    </header>
+
+    <h3 class="refs__title">Bibliografía general</h3>
+    <ol class="refs">
+      <li>BirdLife International. (2023). <em>Ara ambiguus</em>. The IUCN Red List of Threatened Species. https://www.iucnredlist.org</li>
+      <li>Charles Darwin Foundation. (2023). <em>Galápagos species checklist</em>. https://www.darwinfoundation.org</li>
+      <li>Dodson, C. H., &amp; Gentry, A. H. (1991). Biological extinction in western Ecuador. <em>Annals of the Missouri Botanical Garden, 78</em>(2), 273–295.</li>
+      <li>Freile, J. F., &amp; Bonaccorso, E. (Eds.). (2018). <em>Aves del Ecuador: lista oficial y estado de conservación</em>. Aves Ecuador / Universidad San Francisco de Quito.</li>
+      <li>León-Yánez, S., Valencia, R., Pitman, N., Endara, L., Ulloa Ulloa, C., &amp; Navarrete, H. (Eds.). (2011). <em>Libro Rojo de las Plantas Endémicas del Ecuador</em> (2.ª ed.). Herbario QCA, Pontificia Universidad Católica del Ecuador.</li>
+      <li>Ministerio del Ambiente del Ecuador. (2011). <em>Libro Rojo de las Aves del Ecuador</em>. MAE.</li>
+      <li>Ministerio del Ambiente, Agua y Transición Ecológica [MAATE]. (2021). <em>Estrategia Nacional de Biodiversidad 2015–2030</em>. MAATE.</li>
+      <li>Ministerio del Ambiente, Agua y Transición Ecológica [MAATE]. (2020). <em>Plan de manejo del Bosque Petrificado de Puyango</em>. MAATE.</li>
+      <li>Tirira, D. G. (Ed.). (2011). <em>Libro Rojo de los Mamíferos del Ecuador</em> (2.ª ed.). Fundación Mamíferos y Conservación / Pontificia Universidad Católica del Ecuador.</li>
+      <li>Unión Internacional para la Conservación de la Naturaleza [UICN]. (2023). <em>The IUCN Red List of Threatened Species</em>. https://www.iucnredlist.org</li>
+    </ol>
+
+    <h3 class="refs__title">Créditos de las imágenes (Wikimedia Commons)</h3>
+    <ul class="refs refs--credits">
+      <li>Guacamayo verde mayor: Alois Staudacher, <em>Ara ambigua1.JPG</em>, CC BY-SA 3.0.</li>
+      <li>Zamarrito pechinegro: Frank Dietze, <em>Eriocnemis nigrivestis 1.jpg</em>, CC BY 4.0.</li>
+      <li>Tapir andino: David Sifry, <em>Tapirus pinchaque portrait.jpg</em>, CC BY 2.0.</li>
+      <li>Jaguar: Charles J. Sharp, <em>Jaguar (Panthera onca palustris) female Piquiri River 2.JPG</em>, CC BY-SA 4.0.</li>
+      <li>Tortuga gigante de Galápagos: Matthew Field, <em>Galapagos giant tortoise Geochelone elephantopus.jpg</em>, CC BY-SA 3.0.</li>
+      <li>Pigüe: Darwin Pucha Cofrep, <em>Cavanillesia platanifolia Ecuador.jpg</em>, CC BY-SA 3.0.</li>
+      <li>Guayacán: Rahmanuddin, <em>Handroanthus chrysanthus near GAR Hyderabad.jpg</em>, CC BY-SA 4.0.</li>
+      <li>Frailejón: Yupanasimi, <em>Espeletia en el páramo de Cumbal 01.jpg</em>, CC BY-SA 4.0.</li>
+      <li>Cattleya maxima: Orchi, <em>Cattleya maxima Orchi 01.jpg</em>, CC BY-SA 3.0.</li>
+      <li>Mangle rojo: <em>Rhizophora mangle BotGardBln1105RootsLeaves.JPG</em>, CC BY-SA 3.0.</li>
+    </ul>
+
+    <div class="callout callout--soft">
+      <span class="callout__icon" aria-hidden="true">✎</span>
+      <p>
+        <strong>Ficha del proyecto:</strong> Expo Revista Digital «Innovación para un Futuro Sostenible» ·
+        Área de Ciencias Naturales · Tercero de Bachillerato General Unificado.<br />
+        Reportaje: «Evolución, diversidad y amenazas antrópicas: un análisis de las especies nativas y
+        endémicas desde la escala local hasta la global».
+      </p>
+    </div>
+
+    <button class="btn btn--primary btn--lg" data-go="first" type="button">↺ Volver al inicio</button>
+  </section>
+
 </main>
-<footer>© <span id="year"></span> · Expo Revista Digital «Innovación para un Futuro Sostenible» · Sección de Biología</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();function answer(ok){document.getElementById('result').textContent=ok?'✓ Correcto: la especiación puede dar lugar a nuevas especies.':'Intenta de nuevo: busca el proceso relacionado con la formación de nuevas especies.'}</script>
+
+<!-- ====== Navegación inferior ====== -->
+<nav class="nav" aria-label="Navegación de páginas">
+  <button class="navbtn" id="btnPrev" type="button" aria-label="Página anterior">
+    <span aria-hidden="true">←</span> <span class="navbtn__txt">Anterior</span>
+  </button>
+
+  <div class="dots" id="dots" role="tablist" aria-label="Ir a una página"></div>
+
+  <div class="counter"><span id="curPage">1</span><span class="counter__sep">/</span><span id="totPage">9</span></div>
+
+  <button class="navbtn navbtn--primary" id="btnNext" type="button" aria-label="Página siguiente">
+    <span class="navbtn__txt">Siguiente</span> <span aria-hidden="true">→</span>
+  </button>
+</nav>
+
+<!-- ====== Modal de detalle de especie ====== -->
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__box" role="document">
+    <button class="modal__close" data-close type="button" aria-label="Cerrar">×</button>
+    <p class="modal__eyebrow" id="modalTipo"></p>
+    <h3 class="modal__title" id="modalTitle"></h3>
+    <p class="modal__sci" id="modalSci"></p>
+    <div class="modal__body" id="modalBody"></div>
+  </div>
+</div>
+
+<footer class="foot">
+  <p>© <span id="year"></span> · Expo Revista Digital «Innovación para un Futuro Sostenible» — Sección Biología.</p>
+</footer>
+
+<script src="js/app.js"></script>
 </body>
 </html>
