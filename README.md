@@ -14,7 +14,7 @@ https://yyooyyss.github.io/expo-revista-biologia/
 **«Evolución, diversidad y amenazas antrópicas: un análisis de las especies nativas y
 endémicas desde la escala local hasta la global»**
 
-El sitio presenta 9 páginas navegables (botones Anterior/Siguiente, teclado ←/→/Inicio/Fin/Esc,
+El sitio presenta 8 páginas navegables (botones Anterior/Siguiente, teclado ←/→/Inicio/Fin/Esc,
 swipe táctil, barra de progreso y enlaces compartibles por hash):
 
 1. **Portada** — con contador animado y ADN decorativo.
@@ -24,8 +24,7 @@ swipe táctil, barra de progreso y enlaces compartibles por hash):
 5. **Amenazas antrópicas** — deforestación, tráfico ilegal, especies invasoras, cambio climático y contaminación.
 6. **Conservación** — 6 propuestas desde la escala local hasta la global.
 7. **Conclusión** — postura crítica del grupo.
-8. **Actividad** — quiz interactivo de 4 preguntas con puntaje.
-9. **Fuentes** — bibliografía general APA (7.ª ed.) y créditos de imágenes (licencias CC).
+8. **Fuentes** — bibliografía general APA (7.ª ed.) y créditos de imágenes (licencias CC).
 
 ## Especies analizadas
 
