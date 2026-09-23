@@ -895,52 +895,75 @@ img { max-width: 100%; display: block; }
 }
 /* --------------------------------------------------------------------------
    17. IMPRESIÓN / PDF
-   Al imprimir (Ctrl+P → Guardar como PDF) se muestran TODAS las páginas
-   seguidas, con fondo claro y acentos verdes para un resultado limpio.
+   Versión compacta: todas las secciones en orden, sin saltos excesivos.
    -------------------------------------------------------------------------- */
 @media print {
-  @page { margin: 12mm; }
+  @page { margin: 10mm; }
 
-  body { background: #fff; color: #111; }
+  body { background: #fff !important; color: #111; }
 
   /* Ocultar elementos de pantalla */
-  .bg, .topbar, .nav, .modal, .progress, .foot { display: none !important; }
+  .bg, .topbar, .nav, .modal, .progress, .foot, .cover__dna,
+  .ficha__btn, .btn { display: none !important; }
 
   .deck { max-width: 100%; padding: 0; }
 
-  /* Mostrar todas las páginas, una por hoja */
-  .slide { display: block !important; break-after: page; page-break-after: always; }
-  .slide:last-child { break-after: auto; page-break-after: auto; }
+  /* Todas las secciones visibles, en orden de documento */
+  .slide { display: block !important; }
 
+  /* Portada compacta */
   .slide--cover { min-height: auto; }
   .cover { min-height: auto; padding: 0; }
-  .cover__dna { display: none; }
+
+  /* Cada sección principal empieza en hoja nueva (orden claro) */
+  .slide[data-title="Animales"],
+  .slide[data-title="Plantas"],
+  .slide[data-title="Amenazas"],
+  .slide[data-title="Conservación"],
+  .slide[data-title="Conclusión"],
+  .slide[data-title="Fuentes"] { break-before: page; page-break-before: always; }
 
   /* Colores de impresión */
   .eyebrow { color: #1a7a4a; }
   .slide__title, .cover__title, .ficha__nombre, .card h3, .refs__title,
-  .conclusion__crit, .stat__num, .quiz__score { color: #0a3d1f; }
+  .conclusion__crit, .stat__num { color: #0a3d1f; }
+  .cover__title span {
+    color: #0a3d1f;
+    background: none;
+    -webkit-text-fill-color: #0a3d1f;
+  }
   .ficha__sci { color: #1a7a4a; }
 
   .slide__lead, .cover__sub, .card p, .ficha__habitat, .ficha__datos li,
-  .callout p, .conclusion, .refs, .quiz__q p, .quiz__opt, .stat__label,
-  .ficha__refs li { color: #222; }
+  .callout p, .conclusion, .refs, .stat__label, .ficha__refs li { color: #222; }
 
-  .card, .ficha, .callout, .conclusion__crit, .stat, .quiz__q, .quiz__result {
+  .card, .ficha, .callout, .conclusion__crit, .stat {
     background: #fff !important;
     border: 1px solid #bbb;
     box-shadow: none;
   }
 
-  /* Evitar que las tarjetas se corten entre hojas */
-  .ficha, .card, .callout, .conclusion__crit, .quiz__q { break-inside: avoid; page-break-inside: avoid; }
+  /* Fichas de especies: 2 columnas, compactas, sin cortes */
+  .species { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .ficha { break-inside: avoid; page-break-inside: avoid; }
+  .ficha__media { height: 110px; }
+  .ficha__body { padding: 12px 14px; }
+  .ficha__nombre { font-size: 1.05rem; }
+  .ficha__datos { gap: 4px; margin-bottom: 8px; }
+  .ficha__datos li { font-size: 0.78rem; }
+  .ficha__refs { padding-top: 8px; }
+  .ficha__refs li { font-size: 0.7rem; }
+  .ficha__estado { position: static; display: inline-block; margin-top: 6px; background: #eee; color: #111; border-color: #bbb; }
 
-  .ficha__media { height: 170px; }
-  .ficha__btn, .btn { display: none; }
-  .ficha__estado { position: static; display: inline-block; margin-top: 8px; background: #eee; color: #111; border-color: #bbb; }
+  /* Tarjetas de texto: 2 columnas, sin cortes */
+  .slide__head { margin-bottom: 10px; }
+  .slide__title { font-size: 1.35rem; }
+  .slide__lead { font-size: 0.82rem; margin-bottom: 8px; }
+  .grid--3, .grid--2 { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .card { break-inside: avoid; page-break-inside: avoid; padding: 10px 12px; }
+  .card h3 { font-size: 0.95rem; margin-bottom: 4px; }
+  .card p { font-size: 0.78rem; line-height: 1.35; }
+  .callout { padding: 8px 12px; font-size: 0.8rem; }
 
-  .species { grid-template-columns: repeat(2, 1fr); }
-  .grid--3 { grid-template-columns: repeat(2, 1fr); }
-
-  .quiz__opt--ok, .quiz__opt--bad { background: #f0f0f0f0; }
+  .callout, .conclusion__crit { break-inside: avoid; page-break-inside: avoid; }
 }

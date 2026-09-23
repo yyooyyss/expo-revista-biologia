@@ -478,6 +478,8 @@ function bindEvents() {
 /* --------- Impresión: abrir las bibliografías desplegables --------- */
 function bindPrint() {
   const openRefs = () => $$('details.ficha__refs').forEach(d => { d.open = true; });
+  // Al generar el PDF con ?print=1 se abren las bibliografías automáticamente
+  if (new URLSearchParams(location.search).has('print')) openRefs();
   if (window.matchMedia) {
     const mq = window.matchMedia('print');
     const onChange = ev => { if (ev.matches) openRefs(); };
