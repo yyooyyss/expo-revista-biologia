@@ -1,133 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biología | Expo Revista Digital</title>
-<meta name="description" content="Sección de Biología de la Expo Revista Digital «Innovación para un Futuro Sostenible». Tercero de Bachillerato General Unificado." />
-<meta name="author" content="Tercero de Bachillerato General Unificado" />
-
-<meta property="og:title" content="Biología | Expo Revista Digital" />
-<meta property="og:description" content="Sección de Ciencias Naturales: la vida como eje del futuro sostenible." />
-<meta property="og:type" content="article" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129516;</text></svg>" />
+<meta name="description" content="Evolución, biodiversidad y conservación del Ecuador.">
+<style>
+:root{--bg:#07140f;--bg2:#0d241a;--green:#55d38a;--green2:#16805a;--lime:#b7e86b;--cream:#f4f0df;--muted:#b7c8be;--line:#27553f;--gold:#e8c66a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--cream);background:radial-gradient(circle at 10% 0%,#123c28 0,transparent 35%),radial-gradient(circle at 90% 80%,#17351d 0,transparent 30%),var(--bg);line-height:1.65}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(90deg,transparent 49%,#8de0a0 50%,transparent 51%),linear-gradient(transparent 49%,#8de0a0 50%,transparent 51%);background-size:70px 70px;transform:perspective(700px) rotateX(55deg) scale(1.5);transform-origin:top}
+header{position:sticky;top:0;z-index:10;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(7,20,15,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.brand{color:var(--cream);text-decoration:none;font-weight:800;letter-spacing:.04em}.brand span{color:var(--green)}.chip{font-size:.75rem;color:var(--green);border:1px solid var(--line);border-radius:30px;padding:6px 12px}
+main{position:relative;max-width:1150px;margin:auto;padding:30px 5% 60px}.hero{min-height:70vh;display:grid;align-content:center;position:relative}.tag{color:var(--green);text-transform:uppercase;letter-spacing:.22em;font-size:.75rem;font-weight:800}.hero h1{font-family:Georgia,serif;font-size:clamp(3.2rem,9vw,7.5rem);line-height:.9;margin:15px 0;background:linear-gradient(110deg,#fff,var(--green),var(--lime),#fff);background-size:220%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 9s linear infinite}@keyframes shine{to{background-position:-220%}}.hero h2{font:italic clamp(1.3rem,3vw,2rem) Georgia;color:var(--green);margin:0 0 18px}.hero p{max-width:700px;color:var(--muted);font-size:1.05rem}.hero-art{position:absolute;right:2%;bottom:10%;font-size:clamp(6rem,18vw,13rem);opacity:.14;filter:drop-shadow(0 0 30px #55d38a)}
+section{margin:70px 0}.section-head{border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:25px}.section-head h2{font:700 clamp(1.8rem,4vw,3rem) Georgia;margin:0}.section-head p{color:var(--muted);margin:5px 0 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}.card{background:linear-gradient(150deg,rgba(255,255,255,.08),rgba(255,255,255,.025));border:1px solid rgba(85,211,138,.2);border-radius:22px;padding:22px;box-shadow:0 20px 50px #0005;transition:.3s}.card:hover{transform:translateY(-7px);border-color:var(--green)}.icon{font-size:2.5rem}.card h3{font-family:Georgia;font-size:1.35rem;margin:10px 0 5px}.latin{color:var(--green);font-style:italic;font-size:.85rem}.card p{color:var(--muted);font-size:.92rem}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:20px;border-left:3px solid var(--green);background:#ffffff08;border-radius:0 15px 15px 0}.step b{display:block;color:var(--lime);margin-bottom:5px}.number{font-size:2rem;font-weight:900;color:#ffffff22}
+.impact{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.impact .card strong{font-size:2rem;color:var(--green);display:block}.actions li{margin:10px 0;color:var(--muted)}.actions li::marker{color:var(--green)}
+.network{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;padding:30px;border:1px solid var(--line);border-radius:25px;background:#ffffff05}.node{padding:13px 18px;border-radius:50px;background:#123c28;border:1px solid var(--green);font-weight:700}.arrow{color:var(--lime);font-size:1.4rem}
+.quiz{background:linear-gradient(135deg,#123c28,#0a1d15);border:1px solid var(--line);border-radius:25px;padding:28px}.quiz button{margin:7px;padding:10px 15px;border-radius:12px;border:1px solid var(--line);background:#07140f;color:var(--cream);cursor:pointer}.quiz button:hover{border-color:var(--green)}#result{font-weight:800;color:var(--lime);min-height:25px}
+footer{text-align:center;border-top:1px solid var(--line);padding:30px;color:var(--muted);font-size:.8rem}
+a{color:var(--green)}@media(max-width:700px){header{padding:10px 4%}.chip{display:none}.steps,.impact{grid-template-columns:1fr}.hero{min-height:75vh}.hero-art{right:0;bottom:5%}}
+</style>
 </head>
 <body>
-
-<!-- ====== Fondo decorativo ====== -->
-<div class="bg" aria-hidden="true">
-  <div class="bg__grid"></div>
-  <div class="bg__glow bg__glow--1"></div>
-  <div class="bg__glow bg__glow--2"></div>
-  <div class="bg__leaf bg__leaf--1">🍃</div>
-  <div class="bg__leaf bg__leaf--2">🍃</div>
-  <div class="bg__noise"></div>
-</div>
-
-<!-- ====== Barra superior ====== -->
-<header class="topbar">
-  <a class="brand" href="https://yyooyyss.github.io/" aria-label="Volver a la portada de la revista">
-    <span class="brand__mark">B</span>
-    <span class="brand__text">
-      <strong>Expo Revista Digital</strong>
-      <small>Innovación para un Futuro Sostenible</small>
-    </span>
-  </a>
-  <span class="chip">Ciencias Naturales</span>
-</header>
-
+<header><a class="brand" href="https://yyooyyss.github.io/">EXPO REVISTA <span>· BIOLOGÍA</span></a><span class="chip">Ciencias Naturales</span></header>
 <main>
-  <!-- ====== Portada de la sección ====== -->
-  <section class="hero">
-    <p class="eyebrow">Sección de Ciencias Naturales</p>
+<section class="hero">
+<div><span class="tag">Innovación para un Futuro Sostenible</span><h1>Biología</h1><h2>Evolución, diversidad y conservación</h2><p>Un recorrido por la biodiversidad del Ecuador para comprender cómo evolucionan los seres vivos, cómo se relacionan con sus ecosistemas y por qué conservarlos es fundamental para un futuro sostenible.</p></div><div class="hero-art">🧬🌿</div>
+</section>
 
-    <h1 class="hero__title">Biología</h1>
-    <p class="hero__subtitle">La vida como eje del futuro sostenible</p>
+<section id="fundamentos"><div class="section-head"><h2>1 · Fundamentos de la vida y la evolución</h2><p>Conceptos clave para entender la diversidad biológica.</p></div>
+<div class="grid">
+<article class="card"><div class="icon">🧬</div><h3>Evolución</h3><p>Proceso mediante el cual las poblaciones cambian a lo largo de generaciones. La variación heredable y la selección natural contribuyen a la adaptación de las especies.</p></article>
+<article class="card"><div class="icon">🌱</div><h3>Nativas</h3><p>Son especies que forman parte naturalmente de un territorio, sin haber sido introducidas allí por actividades humanas.</p></article>
+<article class="card"><div class="icon">🗺️</div><h3>Endémicas</h3><p>Son especies cuya distribución natural está restringida a una región determinada. Por eso su protección puede ser especialmente importante.</p></article>
+</div>
+<div class="steps" style="margin-top:20px">
+<div class="step"><span class="number">01</span><b>Aislamiento geográfico</b>Una población puede quedar separada de otra.</div>
+<div class="step"><span class="number">02</span><b>Selección natural</b>Algunas características favorecen la supervivencia y reproducción.</div>
+<div class="step"><span class="number">03</span><b>Adaptación</b>Las poblaciones acumulan cambios heredables útiles.</div>
+<div class="step"><span class="number">04</span><b>Especiación</b>Con suficiente diferenciación pueden originarse nuevas especies.</div>
+</div></section>
 
-    <p class="hero__sub">
-      Esta sección de la Expo Revista Digital está dedicada al estudio de los seres vivos,
-      los ecosistemas y el equilibrio ambiental del Ecuador. Su objetivo es mostrar cómo el
-      conocimiento biológico permite comprender y proteger la biodiversidad del país.
-    </p>
-  </section>
+<section id="fauna"><div class="section-head"><h2>2 · 5 animales del Ecuador</h2><p>Ejemplos de fauna vinculada a la biodiversidad y conservación nacional.</p></div>
+<div class="grid">
+<article class="card"><div class="icon">🦜</div><h3>Guacamayo verde mayor</h3><span class="latin">Ara ambiguus</span><p>Ave de gran tamaño asociada a bosques tropicales. La conservación de su hábitat es fundamental para sus poblaciones.</p></article>
+<article class="card"><div class="icon">🐆</div><h3>Jaguar</h3><span class="latin">Panthera onca</span><p>Gran depredador de los ecosistemas tropicales. Su presencia ayuda a mantener relaciones ecológicas dentro de la cadena alimentaria.</p></article>
+<article class="card"><div class="icon">🐻</div><h3>Oso andino</h3><span class="latin">Tremarctos ornatus</span><p>Especie característica de los Andes. Necesita áreas de bosque y páramo conectadas para desplazarse y encontrar alimento.</p></article>
+<article class="card"><div class="icon">🦣</div><h3>Tapir de montaña</h3><span class="latin">Tapirus pinchaque</span><p>Mamífero asociado a ambientes andinos. Su conservación depende de proteger los ecosistemas donde vive.</p></article>
+<article class="card"><div class="icon">🦅</div><h3>Cóndor andino</h3><span class="latin">Vultur gryphus</span><p>Ave emblemática de los Andes y parte importante de los procesos naturales de los ecosistemas donde habita.</p></article>
+</div></section>
 
-  <!-- ====== Estado de la sección ====== -->
-  <section class="estado" aria-labelledby="estadoTitle">
-    <div class="estado__box">
-      <span class="estado__icon" aria-hidden="true">◷</span>
-      <div>
-        <h2 class="estado__title" id="estadoTitle">Contenido en elaboración</h2>
-        <p class="estado__text">
-          El reportaje de esta sección se encuentra en preparación. Cuando esté listo se publicará
-          aquí mismo, con el mismo diseño interactivo de las demás secciones de la revista
-          (navegación por páginas, organizadores gráficos y actividad de refuerzo).
-        </p>
-      </div>
-    </div>
-  </section>
+<section id="flora"><div class="section-head"><h2>3 · 5 plantas del Ecuador</h2><p>Flora nativa registrada en estudios y fuentes de biodiversidad ecuatoriana.</p></div>
+<div class="grid">
+<article class="card"><div class="icon">🌳</div><h3>Ceibo</h3><span class="latin">Ceiba trichistandra</span><p>Árbol nativo de zonas secas del Ecuador, adaptado a condiciones de disponibilidad limitada de agua.</p></article>
+<article class="card"><div class="icon">🌿</div><h3>Pechiche</h3><span class="latin">Vitex gigantea</span><p>Árbol nativo registrado en estudios de flora ecuatoriana y relacionado con los bosques de la región.</p></article>
+<article class="card"><div class="icon">🌸</div><h3>Beldaco</h3><span class="latin">Pseudobombax millei</span><p>Especie vegetal registrada como endémica en estudios de flora ecuatoriana.</p></article>
+<article class="card"><div class="icon">🌱</div><h3>Amarillo</h3><span class="latin">Centrolobium ochroxylum</span><p>Árbol registrado entre las especies endémicas identificadas en estudios de flora del Ecuador.</p></article>
+<article class="card"><div class="icon">🍃</div><h3>Membrillo</h3><span class="latin">Gustavia angustifolia</span><p>Especie vegetal registrada entre la flora endémica estudiada en Ecuador.</p></article>
+</div></section>
 
-  <!-- ====== Ejes temáticos ====== -->
-  <section class="seccion" aria-labelledby="ejesTitle">
-    <header class="sec__head">
-      <h2 class="sec__title" id="ejesTitle">Ejes temáticos previstos</h2>
-      <p class="sec__lead">Los grandes temas que estructurarán esta sección de la revista.</p>
-    </header>
+<section><div class="section-head"><h2>4 · Biodiversidad y ecosistemas</h2><p>La variedad de vida depende de la diversidad de ambientes.</p></div>
+<div class="grid">
+<div class="card"><h3>🏔️ Páramo</h3><p>Los ecosistemas altoandinos presentan condiciones particulares y una flora con especies adaptadas a la altura.</p></div>
+<div class="card"><h3>🌳 Amazonía</h3><p>Sus bosques tropicales albergan numerosas especies y redes ecológicas complejas.</p></div>
+<div class="card"><h3>🌊 Galápagos</h3><p>Su aislamiento geográfico ha contribuido a procesos evolutivos y a una biodiversidad con especies propias de las islas.</p></div>
+</div></section>
 
-    <div class="grid3">
-      <article class="card" style="--acc:#2f8f7b">
-        <span class="card__emoji" aria-hidden="true">🌿</span>
-        <h3>Ecosistemas del Ecuador</h3>
-        <p>Del páramo andino a la Amazonía y las islas Galápagos: los grandes ecosistemas del país, su clima, su flora y su fauna característica.</p>
-      </article>
+<section><div class="section-head"><h2>5 · Impactos sobre la biodiversidad</h2><p>Las actividades humanas pueden modificar los ecosistemas a distintas escalas.</p></div>
+<div class="impact">
+<div class="card"><strong>Local</strong><h3>En nuestra comunidad</h3><p>Acumulación de residuos, pérdida de vegetación, contaminación y alteración de espacios naturales.</p></div>
+<div class="card"><strong>Nacional</strong><h3>En Ecuador</h3><p>Deforestación, fragmentación de hábitats, tráfico de fauna y presión sobre ecosistemas y especies.</p></div>
+<div class="card"><strong>Global</strong><h3>En el planeta</h3><p>Cambio climático, pérdida de biodiversidad, contaminación y transformación de ecosistemas.</p></div>
+</div></section>
 
-      <article class="card" style="--acc:#4a9d5f">
-        <span class="card__emoji" aria-hidden="true">🧬</span>
-        <h3>Biodiversidad</h3>
-        <p>Por qué el Ecuador es uno de los países más biodiversos del planeta, qué significa ser megadiverso y cuántas especies alberga su territorio.</p>
-      </article>
+<section><div class="section-head"><h2>6 · ¿Qué podemos hacer?</h2><p>La conservación también depende de decisiones cotidianas.</p></div>
+<div class="card actions"><ul>
+<li>Crear y cuidar jardines o espacios con plantas nativas.</li>
+<li>Reducir, reutilizar y separar correctamente los residuos.</li>
+<li>No comprar ni mantener fauna silvestre como mascota.</li>
+<li>Proteger áreas verdes y evitar dañar plantas y animales.</li>
+<li>Participar en proyectos escolares y actividades de ciencia ciudadana.</li>
+<li>Compartir información confiable sobre biodiversidad y conservación.</li>
+</ul></div></section>
 
-      <article class="card" style="--acc:#3a8fb7">
-        <span class="card__emoji" aria-hidden="true">♻️</span>
-        <h3>Sostenibilidad y conservación</h3>
-        <p>Las amenazas sobre los ecosistemas —deforestación, contaminación, especies invasoras— y las acciones de conservación y uso responsable de los recursos.</p>
-      </article>
-    </div>
-  </section>
+<section><div class="section-head"><h2>7 · Red de la vida</h2><p>Los seres vivos están conectados dentro de los ecosistemas.</p></div>
+<div class="network"><span class="node">🌱 Plantas</span><span class="arrow">→</span><span class="node">🦜 Herbívoros</span><span class="arrow">→</span><span class="node">🐆 Depredadores</span><span class="arrow">→</span><span class="node">♻️ Equilibrio ecológico</span></div></section>
 
-  <!-- ====== Lo que incluirá el reportaje ====== -->
-  <section class="seccion" aria-labelledby="incluyeTitle">
-    <header class="sec__head">
-      <h2 class="sec__title" id="incluyeTitle">Lo que incluirá el reportaje</h2>
-      <p class="sec__lead">La estructura prevista de la sección, siguiendo el formato de la revista.</p>
-    </header>
+<section><div class="section-head"><h2>8 · Actividad de refuerzo</h2><p>Comprueba cuánto recuerdas sobre evolución.</p></div>
+<div class="quiz"><h3>¿Qué proceso puede contribuir directamente a la formación de nuevas especies?</h3><button onclick="answer(false)">Fotosíntesis</button><button onclick="answer(true)">Especiación</button><button onclick="answer(false)">Digestión</button><p id="result"></p></div></section>
 
-    <ol class="lista">
-      <li><b>Título y portada</b> con la identidad visual de la revista.</li>
-      <li><b>Organizador gráfico</b> con los conceptos y procesos principales del tema.</li>
-      <li><b>Cuadro o infografía comparativa</b> de los elementos estudiados.</li>
-      <li><b>Análisis de la realidad ecuatoriana</b> y su relación con el desarrollo sostenible.</li>
-      <li><b>Conclusión con postura crítica</b> del grupo de trabajo.</li>
-      <li><b>Fuentes consultadas</b> en formato APA (7.ª edición).</li>
-    </ol>
-  </section>
+<section><div class="section-head"><h2>9 · Conclusión</h2></div>
+<div class="card"><p>La biodiversidad del Ecuador representa una riqueza biológica formada por millones de años de procesos evolutivos y por la interacción entre especies y ecosistemas. Conocer animales, plantas y ambientes permite comprender que la conservación no depende únicamente de áreas protegidas, sino también del uso responsable de los recursos y de la participación de la sociedad. Proteger la biodiversidad significa conservar las condiciones que permiten la vida y construir un futuro más sostenible.</p></div></section>
 
-  <!-- ====== Navegación de regreso ====== -->
-  <div class="volver">
-    <a class="btn btn--ghost" href="https://yyooyyss.github.io/">← Volver a la revista</a>
-    <a class="btn" href="https://yyooyyss.github.io/expo-revista-escuelas-economicas/">Ver la sección de Historia →</a>
-  </div>
+<section><div class="section-head"><h2>Fuentes consultadas</h2></div>
+<div class="card"><p><a href="https://bioweb.bio/" target="_blank" rel="noopener">BIOWEB Ecuador — PUCE</a><br><a href="https://www.gbif.org/" target="_blank" rel="noopener">GBIF — Global Biodiversity Information Facility</a><br><a href="https://www.ambiente.gob.ec/" target="_blank" rel="noopener">Ministerio del Ambiente, Agua y Transición Ecológica del Ecuador (MAATE)</a></p></div></section>
+
+<div style="display:flex;gap:12px;flex-wrap:wrap"><a class="card" style="text-decoration:none" href="https://yyooyyss.github.io/">← Volver a la revista</a></div>
 </main>
-
-<footer class="foot">
-  <p>© <span id="year"></span> · Expo Revista Digital «Innovación para un Futuro Sostenible» — Sección de Biología.</p>
-  <p class="foot__sub">Tercero de Bachillerato General Unificado · Publicado con GitHub Pages</p>
-</footer>
-
-<script src="js/app.js"></script>
+<footer>© <span id="year"></span> · Expo Revista Digital «Innovación para un Futuro Sostenible» · Sección de Biología</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();function answer(ok){document.getElementById('result').textContent=ok?'✓ Correcto: la especiación puede dar lugar a nuevas especies.':'Intenta de nuevo: busca el proceso relacionado con la formación de nuevas especies.'}</script>
 </body>
 </html>
