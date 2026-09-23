@@ -475,6 +475,18 @@ function bindEvents() {
   }
 }
 
+/* --------- Impresión: abrir las bibliografías desplegables --------- */
+function bindPrint() {
+  const openRefs = () => $$('details.ficha__refs').forEach(d => { d.open = true; });
+  if (window.matchMedia) {
+    const mq = window.matchMedia('print');
+    const onChange = ev => { if (ev.matches) openRefs(); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  }
+  window.addEventListener('beforeprint', openRefs);
+}
+
 /* --------------------------------------------------------------------------
    7. INICIALIZACIÓN
    -------------------------------------------------------------------------- */
@@ -485,6 +497,7 @@ function init() {
   renderSpecies();
   buildDots();
   bindEvents();
+  bindPrint();
 
   // Abrir en la página indicada por el hash (enlace compartible)
   const hash = decodeURIComponent(location.hash.replace('#', '') || '');

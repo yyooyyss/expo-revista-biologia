@@ -893,3 +893,54 @@ img { max-width: 100%; display: block; }
   }
   html { scroll-behavior: auto; }
 }
+/* --------------------------------------------------------------------------
+   17. IMPRESIÓN / PDF
+   Al imprimir (Ctrl+P → Guardar como PDF) se muestran TODAS las páginas
+   seguidas, con fondo claro y acentos verdes para un resultado limpio.
+   -------------------------------------------------------------------------- */
+@media print {
+  @page { margin: 12mm; }
+
+  body { background: #fff; color: #111; }
+
+  /* Ocultar elementos de pantalla */
+  .bg, .topbar, .nav, .modal, .progress, .foot { display: none !important; }
+
+  .deck { max-width: 100%; padding: 0; }
+
+  /* Mostrar todas las páginas, una por hoja */
+  .slide { display: block !important; break-after: page; page-break-after: always; }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+
+  .slide--cover { min-height: auto; }
+  .cover { min-height: auto; padding: 0; }
+  .cover__dna { display: none; }
+
+  /* Colores de impresión */
+  .eyebrow { color: #1a7a4a; }
+  .slide__title, .cover__title, .ficha__nombre, .card h3, .refs__title,
+  .conclusion__crit, .stat__num, .quiz__score { color: #0a3d1f; }
+  .ficha__sci { color: #1a7a4a; }
+
+  .slide__lead, .cover__sub, .card p, .ficha__habitat, .ficha__datos li,
+  .callout p, .conclusion, .refs, .quiz__q p, .quiz__opt, .stat__label,
+  .ficha__refs li { color: #222; }
+
+  .card, .ficha, .callout, .conclusion__crit, .stat, .quiz__q, .quiz__result {
+    background: #fff !important;
+    border: 1px solid #bbb;
+    box-shadow: none;
+  }
+
+  /* Evitar que las tarjetas se corten entre hojas */
+  .ficha, .card, .callout, .conclusion__crit, .quiz__q { break-inside: avoid; page-break-inside: avoid; }
+
+  .ficha__media { height: 170px; }
+  .ficha__btn, .btn { display: none; }
+  .ficha__estado { position: static; display: inline-block; margin-top: 8px; background: #eee; color: #111; border-color: #bbb; }
+
+  .species { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+
+  .quiz__opt--ok, .quiz__opt--bad { background: #f0f0f0f0; }
+}
